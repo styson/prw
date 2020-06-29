@@ -1,5 +1,8 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const cssLoaders = ["css-loader"];
 
 module.exports = {
   context: resolve(__dirname, 'src'),
@@ -10,13 +13,23 @@ module.exports = {
     './index.jsx',
   ],
   output: {
-    filename: 'build.js',
+    filename: 'javascripts/build.js',
     path: '/',
-    publicPath: '/javascripts',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: 'css/style.css',
+      chunkFilename: '[id].css',
+    }),
+  ],
   module: {
     rules: [
       {
@@ -25,6 +38,26 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
+      },
+      {
+        test: /\.css$/,
+        include: [/bootstrap.css$/i, /font-awesome.css$/],
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          ...cssLoaders
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+          },
+          "sass-loader"
+        ]
       },
       {
         test: /\.html$/,
@@ -36,8 +69,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
-  ],
 };
