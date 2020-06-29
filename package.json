@@ -27,6 +27,7 @@
     "passport-local-mongoose": "^6.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
