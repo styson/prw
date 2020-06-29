@@ -1,40 +1,41 @@
 {
-  "env": {
-    "browser": true,
-    "jest/globals": true
+  'env': {
+    'browser': true,
+    'jest/globals': true
   },
 
-  "extends": "airbnb",
+  'extends': 'airbnb',
 
-  "plugins": [ "jest" ],
+  'plugins': [ 'jest' ],
 
-  "rules": {
-    "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
-    "default-case": "off",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true }],
-    "linebreak-style": "off",
-    "max-len": ["warn", 100],
-    "new-cap": "off",
-    "no-console": "off",
-    "no-continue": "off",
-    "no-else-return": "off",
-    "no-param-reassign": "warn",
-    "no-plusplus": "off",
-    "no-prototype-builtins": "off",
+  'rules': {
+    'no-unused-vars': ['error', { 'argsIgnorePattern': 'next' }],
+    'default-case': 'off',
+    'import/no-extraneous-dependencies': ['error', {'devDependencies': true }],
+    'linebreak-style': 'off',
+    'max-len': ['warn', 100],
+    'new-cap': 'off',
+    'no-console': 'off',
+    'no-continue': 'off',
+    'no-else-return': 'off',
+    'no-param-reassign': 'warn',
+    'no-plusplus': 'off',
+    'no-prototype-builtins': 'off',
 
-    "no-restricted-syntax": [
-      "error",
-      "LabeledStatement",
-      "WithStatement",
+    'no-restricted-syntax': [
+      'error',
+      'LabeledStatement',
+      'WithStatement',
     ],
 
-    "no-underscore-dangle": "warn",
-    "prefer-rest-params": "off",
-    "prefer-template": "warn",
-    "react/prop-types": [0],
-    "quote-props": ["warn", "as-needed"],
-    "spaced-comment": "off",
-    "strict": "off",
-    "vars-on-top": "off",
+    'no-underscore-dangle': 'warn',
+    'prefer-rest-params': 'off',
+    'prefer-template': 'warn',
+    'react/prop-types': [0],
+    'react/jsx-one-expression-per-line': 'off',
+    'quote-props': ['warn', 'as-needed'],
+    'spaced-comment': 'off',
+    'strict': 'off',
+    'vars-on-top': 'off',
   }
 }

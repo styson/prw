@@ -15,9 +15,9 @@ const expressSession = require('express-session')({
 });
 
 const webpack = require('webpack');
-const webpackConfig = require('./webpack.config');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const webpackConfig = require('./webpack.config');
 
 const index = require('./routes/index');
 const api = require('./routes/api/index');
