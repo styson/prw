@@ -11,6 +11,7 @@
   "rules": {
     "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
     "default-case": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true }],
     "linebreak-style": "off",
     "max-len": ["warn", 100],
     "new-cap": "off",
@@ -30,6 +31,7 @@
     "no-underscore-dangle": "warn",
     "prefer-rest-params": "off",
     "prefer-template": "warn",
+    "react/prop-types": [0],
     "quote-props": ["warn", "as-needed"],
     "spaced-comment": "off",
     "strict": "off",
