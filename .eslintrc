@@ -1,0 +1,38 @@
+{
+  "env": {
+    "browser": true,
+    "jest/globals": true
+  },
+
+  "extends": "airbnb",
+
+  "plugins": [ "jest" ],
+
+  "rules": {
+    "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
+    "default-case": "off",
+    "linebreak-style": "off",
+    "max-len": ["warn", 100],
+    "new-cap": "off",
+    "no-console": "off",
+    "no-continue": "off",
+    "no-else-return": "off",
+    "no-param-reassign": "warn",
+    "no-plusplus": "off",
+    "no-prototype-builtins": "off",
+
+    "no-restricted-syntax": [
+      "error",
+      "LabeledStatement",
+      "WithStatement",
+    ],
+
+    "no-underscore-dangle": "warn",
+    "prefer-rest-params": "off",
+    "prefer-template": "warn",
+    "quote-props": ["warn", "as-needed"],
+    "spaced-comment": "off",
+    "strict": "off",
+    "vars-on-top": "off",
+  }
+}
