@@ -15,7 +15,5 @@ const renderApp = (Component) => {
 renderApp(Template);
 
 if (module && module.hot) {
-  module.hot.accept('./components/Template', () => {
-    renderApp(Template);
-  });
+  module.hot.accept();
 }

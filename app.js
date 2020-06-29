@@ -14,6 +14,11 @@ const expressSession = require('express-session')({
   saveUninitialized: false,
 });
 
+const webpack = require('webpack');
+const webpackConfig = require('./webpack.config');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
+
 const index = require('./routes/index');
 const api = require('./routes/api/index');
 const users = require('./routes/api/users');
@@ -26,6 +31,21 @@ mongoose.connect('mongodb://localhost/musiclist', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+// Webpack Server
+const webpackCompiler = webpack(webpackConfig);
+app.use(webpackDevMiddleware(webpackCompiler, {
+  publicPath: webpackConfig.output.publicPath,
+  stats: {
+    colors: true,
+    chunks: true,
+    'errors-only': true,
+  },
+}));
+
+app.use(webpackHotMiddleware(webpackCompiler, {
+  log: console.log,
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
